@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday â ¤ï¸ </title>
+    <!-- Google Fonts: Playfair Display (Elegant Serifs) and Poppins (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body { opacity: 0; transition: opacity 1s ease; }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="landscape-clouds" id="landscape-clouds"></div>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none;"></canvas>
+
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="glass-card lock-card fade-in">
+            <div class="countdown-wrapper" id="countdown-wrapper">
+                <p class="countdown-hint">Wait for the special moment...</p>
+                <div class="countdown-display" id="countdown-display">
+                    <div class="time-box">
+                        <span id="cd-days">00</span>
+                        <small>Days</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="cd-hours">00</span>
+                        <small>Hours</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="cd-minutes">00</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div class="time-box">
+                        <span id="cd-seconds">00</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+            </div>
+            <h1 id="happy-birthday-text" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); opacity: 0; pointer-events: none; transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); font-family: var(--font-heading); color: var(--highlight-color); font-size: 3.5rem; text-align: center; margin: 0; width: 100%; text-shadow: 0px 2px 4px rgba(255,255,255,0.3);">
+                Happy Birthday!
+            </h1>
+        </div>
+    </header>
+    <div id="surprise-section" style="opacity: 0; pointer-events: none; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; transition: opacity 1.5s ease-in-out;">
+    <div class="slideshow-wrapper">
+        
+        <!-- SLIDE 1: The Letter Envelope -->
+        <div class="slide active-slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="envelope-wrapper">
+                    <i class="fa-solid fa-heart floating-heart heart-1"></i>
+                    <i class="fa-solid fa-heart floating-heart heart-2"></i>
+                    <div class="envelope-back"></div>
+                    <div class="envelope-letter">
+                        <h2>Happy Birthday, Harshita</h2><br>
+                        <p>My life is so much more beautiful with you in it. I feel incredibly lucky to have you, and talking to you is my favorite part of any day. Loving you is a wonderful adventure. I find myself falling a little more in love with you every single day, whether we're talking about everything or nothing at all.<br><br>I just wanted to say happy birthday, my love, and I hope this upcoming year brings you as much joy as you bring me. <i class="fa-solid fa-heart" style="color: #764b8e;"></i></p>
+                    </div>
+                    <div class="envelope-left">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,0 0,100 50,55" /></svg>
+                    </div>
+                    <div class="envelope-right">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="100,0 100,100 50,55" /></svg>
+                    </div>
+                    <div class="envelope-bottom">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,100 100,100 50,55" /></svg>
+                        <div class="env-scribble">Open Me!</div>
+                    </div>
+                    <div class="envelope-flap">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,0 100,0 50,55" /></svg>
+                    </div>
+                    
+                    <!-- Doodle Seal -->
+                    <div class="env-doodle-seal"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Image 1 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/1.jpg" alt="Memory 1">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Unexpected Beginning</h3>
+                        <p class="story-text">When we first met, I had no idea you would become my entire world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Image 2 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/2.jpg" alt="Memory 2">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Timeless Memories</h3>
+                        <p class="story-text">Every moment spent with you is a memory I will treasure forever.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Image 3 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/3.jpg" alt="Memory 3">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Radiant Smile</h3>
+                        <p class="story-text">Your smile brightens even my darkest days.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Image 4 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/4.jpg" alt="Memory 4">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Cherished Moments</h3>
+                        <p class="story-text">You make the simplest moments feel like magic.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Image 5 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/5.jpg" alt="Memory 5">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Favorite Chapter</h3>
+                        <p class="story-text">You are the most beautiful chapter of my life's story.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Image 6 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/6.jpg" alt="Memory 6">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Endless Replay</h3>
+                        <p class="story-text">I would gladly relive every single moment, as long as it was with you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Why you are special (Scratch cards) -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div style="width: 100%;">
+                    <h2 class="section-title" style="text-align: center; color: var(--highlight-color);">Why You're So Special</h2>
+                    <div class="reasons-grid">
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-heart"></i></div>
+                                <h3>Your Beautiful Smile</h3>
+                                <p>It lights up my world and makes everything better.</p>
+                            </div>
+                        </div>
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-face-smile"></i></div>
+                                <h3>Your Pure Heart</h3>
+                                <p>Your endless kindness and warmth make me fall for you more every day.</p>
+                            </div>
+                        </div>
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-star"></i></div>
+                                <h3>Our Moments</h3>
+                                <p>You turn every ordinary day into something unforgettable.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Voice Clip + Story -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card" style="justify-content: center;">
+                    <div class="memory-story-content" style="text-align: center; width: 100%; max-width: 600px; padding: 4rem;">
+                        <h3 style="margin: 0 auto 1.5rem auto;">From My Heart</h3>
+                        <p class="story-text">These past months with you have been filled with so much love and laughter. Every single day, my heart finds a new reason to love you, and I will always choose you.</p>
+                        
+                        <div class="player-controls diy-player" style="margin-top: 2rem;">
+                            <button id="inline-play-btn" class="control-btn"><i class="fa-solid fa-play"></i></button>
+                            <div class="progress-container">
+                                <span id="current-time">0:00</span>
+                                <input type="range" id="progress-bar" value="0" max="100">
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio id="bg-music" loop>
+                            <source src="asset/song.mp4" type="audio/mp4">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Final Surprise -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div style="width: 100%; text-align: center;">
+                    <h2 class="section-title" id="gift-title" style="margin-bottom: 0.5rem; transition: opacity 0.5s;">One Last Surprise...</h2>
+                    <p class="story-text" id="gift-instruction" style="margin-bottom: 6rem; transition: opacity 0.5s;">Tap the box to open your gift!</p>
+                    
+                    <div class="gift-box-container" id="final-gift">
+                        <!-- The popping polaroid -->
+                        <div class="surprise-content-pop">
+                            <div class="doodle-paper" style="padding: 4rem 3rem; text-align: center; background: #ffffff; border: 4px solid #1a1a1a; border-radius: 4px; width: 100%; box-sizing: border-box; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+                                <div style="font-size: 4.5rem; color: var(--accent-color); margin-bottom: 1.5rem; filter: drop-shadow(3px 3px 0 #1a1a1a) drop-shadow(-3px -3px 0 #1a1a1a) drop-shadow(3px -3px 0 #1a1a1a) drop-shadow(-3px 3px 0 #1a1a1a);"><i class="fa-solid fa-heart"></i></div>
+                                <!-- <h2 style="font-family: 'Caveat', cursive; font-size: 3.5rem; color: #1a1a1a; margin-bottom: 1.5rem; line-height: 1;">Surprise!</h2> -->
+                                <p style="font-family: 'Caveat', cursive; font-size: 2rem; color: #1a1a1a; font-weight: 700; line-height: 1.4; margin-bottom: 0;">My love, I hope this little surprise reminds you just how much you mean to me. Thank you for every smile, every memory, and every beautiful moment we've shared. You make my life complete just by being by my side. No matter where life takes us, I will always be grateful for the happiness you bring me. This is just one small chapter in our beautiful story together. I love you more than words can express.</p>
+                            </div>
+                        </div>
+
+                        <!-- The 3D Box -->
+                        <div class="gift-box">
+                            <div class="gift-box-body">
+                                <div class="gift-ribbon-vertical"></div>
+                                <div class="gift-ribbon-horizontal"></div>
+                            </div>
+                            <div class="gift-box-lid">
+                                <div class="gift-ribbon-vertical"></div>
+                                <div class="gift-ribbon-horizontal"></div>
+                                <!-- Bow -->
+                                <div class="gift-bow-left"></div>
+                                <div class="gift-bow-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="slide-nav">
+        <button id="prev-slide" class="nav-btn" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+        <span id="slide-indicator" style="color: var(--text-dark); font-weight: 500;">1 / 10</span>
+        <button id="next-slide" class="nav-btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+
+    </div>
+
+    <script src="script.js"></script>
+    <script src="index.js"></script>
+    <script src="bg-animation.js"></script>
+</body>
+</html>

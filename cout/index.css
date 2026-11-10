@@ -1,0 +1,90 @@
+.countdown-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.countdown-hint {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    opacity: 0.85;
+}
+
+.countdown-display {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.time-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.1) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 1rem 1.2rem;
+    min-width: 80px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 
+        0 8px 32px 0 rgba(34, 11, 46, 0.1),
+        inset 1px 1px 2px rgba(255, 255, 255, 0.8),
+        inset -1px -1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.time-box span {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--highlight-color);
+    text-shadow: 0px 2px 4px rgba(255,255,255,0.3);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.time-box small {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+    .countdown-display {
+        gap: 0.8rem;
+    }
+    .time-box {
+        min-width: 65px;
+        padding: 0.8rem;
+    }
+    .time-box span {
+        font-size: 1.6rem;
+    }
+    .time-box small {
+        font-size: 0.7rem;
+    }
+}
+
+.lock-card {
+    position: relative;
+    max-width: 550px !important;
+    width: 100%;
+    padding: 3rem 2rem !important;
+    margin: 0 auto;
+    border-radius: 30px !important;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 100%) !important;
+    box-shadow: 
+        0 20px 50px 0 rgba(34, 11, 46, 0.2),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.5) !important;
+}

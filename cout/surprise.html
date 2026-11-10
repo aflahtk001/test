@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Surprise ❤️</title>
+    <!-- Google Fonts: Playfair Display (Elegant Serifs) and Poppins (Modern Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Canvas Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body { opacity: 0; transition: opacity 1s ease; }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-gradient"></div>
+    <div class="landscape-clouds" id="landscape-clouds"></div>
+    <canvas id="bg-canvas" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; pointer-events: none;"></canvas>
+
+    <div class="slideshow-wrapper">
+        
+        <!-- SLIDE 1: The Letter Envelope -->
+        <div class="slide active-slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="envelope-wrapper">
+                    <!-- Floating doodle hearts -->
+                    <i class="fa-solid fa-heart floating-heart heart-1"></i>
+                    <i class="fa-solid fa-heart floating-heart heart-2"></i>
+                    
+                    <div class="envelope-back"></div>
+                    <div class="envelope-letter">
+                        <!-- <div class="letter-heart"><i class="fa-solid fa-heart"></i></div> -->
+                        <h2>Happy Birthdayyyy Harshitaa!!!!</h2><br>
+                        <p>
+
+Life is Better With You in It!! I Feel So Lucky to Have Youuu & Loveee to Talk to You, Tbh Loving You is a Crazy Adventure Which is Quite Entertaining, I Fall a Little More in Love With You Everydayyy and You're My Favorite Person to Talk Abt Nothing and Everything.
+
+I Dunno if I'm Writing Enough but I Just Want to Say Happpy Buddayyyy Jaanuuuu and Wish You Luck for the Upcoming Yearrr. <i class="fa-solid fa-heart" style="color: #764b8e;"></i></p>
+                    </div>
+                    <div class="envelope-left">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,0 0,100 50,55" /></svg>
+                    </div>
+                    <div class="envelope-right">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="100,0 100,100 50,55" /></svg>
+                    </div>
+                    <div class="envelope-bottom">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,100 100,100 50,55" /></svg>
+                        <div class="env-scribble">Open Me!</div>
+                    </div>
+                    <div class="envelope-flap">
+                        <svg viewBox="0 0 100 100" preserveAspectRatio="none" class="env-svg"><polygon points="0,0 100,0 50,55" /></svg>
+                    </div>
+                    
+                    <!-- Doodle Seal -->
+                    <div class="env-doodle-seal"><i class="fa-solid fa-heart"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 2: Image 1 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/1.jpg" alt="Memory 1">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Our Beginning</h3>
+                        <p class="story-text">This mirror selfie takes me back to our first date. I didn't know it then, but that day would become one of my favorite memories with you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 3: Image 2 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/2.jpg" alt="Memory 2">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Your Smile</h3>
+                        <p class="story-text">This picture always makes me smile. You look so effortlessly cute here, and I never get tired of looking at it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 4: Image 3 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/3.jpg" alt="Memory 3">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Unexpected Magic</h3>
+                        <p class="story-text">What started as an unplanned date turned into a memory I will always cherish. Some of the best moments with you happen when we least expect them.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 5: Image 4 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/4.png" alt="Memory 4">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Sweet Bond</h3>
+                        <p class="story-text">I love this picture because it captures a special moment between you and your best friend. Seeing the people you love reminds me of how lucky I am to know you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 6: Image 5 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/5.jpg" alt="Memory 5">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Beautiful Eyes</h3>
+                        <p class="story-text">I know this is your favorite picture, and I completely understand why. Every time I see your eyes, I find another reason to fall for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 7: Image 6 -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card">
+                    <div class="memory-image-wrapper">
+                        <img src="asset/6.jpg" alt="Memory 6">
+                    </div>
+                    <div class="memory-story-content">
+                        <h3>Precious Memory</h3>
+                        <p class="story-text">This photo means so much to you, and that alone makes it special to me. Every time I see it, I think of the beautiful memories that make you who you are.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 8: Why you are special (Scratch cards) -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div style="width: 100%;">
+                    <h2 class="section-title" style="text-align: center; color: var(--highlight-color);">Why You're So Special</h2>
+                    <div class="reasons-grid">
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-heart"></i></div>
+                                <h3>Your Personality</h3>
+                                <p>The way you care, love, and treat people is one of the many reasons I admire you so much. Your heart makes you beautiful in a way no picture ever could.</p>
+                            </div>
+                        </div>
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-face-smile"></i></div>
+                                <h3>Your Eyes</h3>
+                                <p>There is something about your eyes that always captures my attention. I could look at them forever and still find new reasons to fall for you.</p>
+                            </div>
+                        </div>
+                        <div class="diy-reason-card scratch-container">
+                            <canvas class="scratch-canvas"></canvas>
+                            <div class="scratch-content">
+                                <div class="reason-icon"><i class="fa-solid fa-star"></i></div>
+                                <h3>Your Laughter</h3>
+                                <p>Your laughter is one of my favorite sounds in the world. Hearing you laugh instantly makes my day better and fills my heart with happiness.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 9: Voice Clip + Story -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div class="memory-card" style="justify-content: center;">
+                    <div class="memory-story-content" style="text-align: center; width: 100%; max-width: 600px; padding: 4rem;">
+                        <h3 style="margin: 0 auto 1.5rem auto;">Thinking Of You</h3>
+                        <p class="story-text">Every time I hear this song, I think of you. Knowing it's your favorite makes it even more special, because it feels like a little piece of you that I can carry with me wherever I go.</p>
+                        
+                        <div class="player-controls diy-player" style="margin-top: 2rem;">
+                            <button id="inline-play-btn" class="control-btn"><i class="fa-solid fa-play"></i></button>
+                            <div class="progress-container">
+                                <span id="current-time">0:00</span>
+                                <input type="range" id="progress-bar" value="0" max="100">
+                                <span id="duration">0:00</span>
+                            </div>
+                        </div>
+                        <audio id="bg-music" loop>
+                            <source src="asset/song.mp3" type="audio/mpeg">
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 10: Final Surprise -->
+        <div class="slide">
+            <div class="container center-content" style="height: 100vh;">
+                <div style="width: 100%; text-align: center;">
+                    <h2 class="section-title" id="gift-title" style="margin-bottom: 0.5rem; transition: opacity 0.5s;">One Last Surprise...</h2>
+                    <p class="story-text" id="gift-instruction" style="margin-bottom: 6rem; transition: opacity 0.5s;">Tap the box to open your gift!</p>
+                    
+                    <div class="gift-box-container" id="final-gift">
+                        <!-- The popping polaroid -->
+                        <div class="surprise-content-pop">
+                            <div class="doodle-paper" style="padding: 4rem 3rem; text-align: center; background: #ffffff; border: 4px solid #1a1a1a; border-radius: 4px; width: 100%; box-sizing: border-box; box-shadow: 0 15px 40px rgba(0,0,0,0.15);">
+                                <div style="font-size: 4.5rem; color: var(--accent-color); margin-bottom: 1.5rem; filter: drop-shadow(3px 3px 0 #1a1a1a) drop-shadow(-3px -3px 0 #1a1a1a) drop-shadow(3px -3px 0 #1a1a1a) drop-shadow(-3px 3px 0 #1a1a1a);"><i class="fa-solid fa-heart"></i></div>
+                                <!-- <h2 style="font-family: 'Caveat', cursive; font-size: 3.5rem; color: #1a1a1a; margin-bottom: 1.5rem; line-height: 1;">Surprise!</h2> -->
+                                <p style="font-family: 'Caveat', cursive; font-size: 2rem; color: #1a1a1a; font-weight: 700; line-height: 1.4; margin-bottom: 0;">My Love, if you've made it this far, I want you to know that this surprise was never really about the photos or the messages. It was about reminding you how important you are to me. Thank you for every smile, every memory, and every beautiful moment we've shared. You make my life better just by being in it. No matter what the future holds, I will always be grateful for you and for the happiness you bring into my world. This may be the end of this surprise, but it's only the beginning of many more beautiful memories together. I love you more than words can ever express.</p>
+                            </div>
+                        </div>
+
+                        <!-- The 3D Box -->
+                        <div class="gift-box">
+                            <div class="gift-box-body">
+                                <div class="gift-ribbon-vertical"></div>
+                                <div class="gift-ribbon-horizontal"></div>
+                            </div>
+                            <div class="gift-box-lid">
+                                <div class="gift-ribbon-vertical"></div>
+                                <div class="gift-ribbon-horizontal"></div>
+                                <!-- Bow -->
+                                <div class="gift-bow-left"></div>
+                                <div class="gift-bow-right"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="slide-nav">
+        <button id="prev-slide" class="nav-btn" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+        <span id="slide-indicator" style="color: var(--text-dark); font-weight: 500;">1 / 10</span>
+        <button id="next-slide" class="nav-btn">Next <i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="bg-animation.js"></script>
+</body>
+</html>
+
